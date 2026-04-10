@@ -1,30 +1,27 @@
-public class BookArrayDemo {
-    public static void main(String[] args) {
-        Book[] books = new Book[3];
-        
-        books[0] = new Book("Java Programming", "John Smith", 450.00);
-        books[1] = new Book("Data Structures", "Jane Doe", 550.00);
-        books[2] = new Book("Web Development", "Tom Wilson", 650.00);
-        
-        System.out.println("Book Details:");
-        for (Book book : books) {
-            book.displayDetails();
-        }
+class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    public double add(double a, double b) {
+        return a + b;
     }
 }
 
-class Book {
-    String title;
-    String author;
-    double price;
-    
-    Book(String title, String author, double price) {
-        this.title = title;
-        this.author = author;
-        this.price = price;
-    }
-    
-    void displayDetails() {
-        System.out.println("Title: " + title + ", Author: " + author + ", Price: Rs. " + price);
+public class CalculatorDemo {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+
+        System.out.println("=== Method Overloading Demo ===");
+
+        System.out.println("add(5, 3) = " + calc.add(5, 3));
+
+        System.out.println("add(5, 3, 2) = " + calc.add(5, 3, 2));
+
+        System.out.println("add(5.5, 3.2) = " + calc.add(5.5, 3.2));
     }
 }

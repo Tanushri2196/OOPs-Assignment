@@ -1,30 +1,28 @@
-public class BookArrayDemo {
-    public static void main(String[] args) {
-        Book[] books = new Book[3];
-        
-        books[0] = new Book("Java Programming", "John Smith", 450.00);
-        books[1] = new Book("Data Structures", "Jane Doe", 550.00);
-        books[2] = new Book("Web Development", "Tom Wilson", 650.00);
-        
-        System.out.println("Book Details:");
-        for (Book book : books) {
-            book.displayDetails();
-        }
-    }
-}
-
 class Book {
-    String title;
-    String author;
-    double price;
-    
-    Book(String title, String author, double price) {
+    private String title;
+    private String author;
+    private double price;
+
+    public Book(String title, String author, double price) {
         this.title = title;
         this.author = author;
         this.price = price;
     }
-    
-    void displayDetails() {
-        System.out.println("Title: " + title + ", Author: " + author + ", Price: Rs. " + price);
+
+    public void display() {
+        System.out.println("Title: " + title + ", Author: " + author + ", Price: $" + price);
+    }
+}
+
+class BookArrayDemo {
+    public static void main(String[] args) {
+        Book[] books = new Book[3];
+        books[0] = new Book("Java Programming", "Herbert Schildt", 500);
+        books[1] = new Book("Data Structures", "Mark Allen Weiss", 450);
+        books[2] = new Book("Algorithms", "Thomas Cormen", 600);
+
+        for (Book book : books) {
+            book.display();
+        }
     }
 }
